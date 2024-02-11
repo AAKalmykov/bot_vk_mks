@@ -13,7 +13,6 @@ import os
 # Создаем экземпляр бота
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 # bot = Bot(token=BOT_TOKEN)
-print(BOT_TOKEN)
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # Обработчик команды /start или приветствия

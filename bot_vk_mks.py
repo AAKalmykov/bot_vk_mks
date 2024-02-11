@@ -7,6 +7,7 @@
 
 import pandas as pd
 import telebot
+import os
 
 
 # Создаем экземпляр бота

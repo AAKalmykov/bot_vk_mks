@@ -30,7 +30,7 @@ def handle_text(message):
 
     # Ищем статус заказа по номеру
     #status = orders_df.loc[orders_df['Номер заказа'] == order_number, 'Статус'].values
-    status = 0
+    status = "0"
 
     if len(status) > 0:
         bot.reply_to(message, f"Статус заказа {order_number}: {status[0]}")

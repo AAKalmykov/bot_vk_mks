@@ -101,7 +101,8 @@ def roberta_correction(text):
     if len(text) == 0:
         return 'Попробуй отправить еще и немного букв'
     # results = xlm_roberta.infer(texts=[text], apply_sbd=True)
-    results = 'Тебя зовут ' + {message.from_user.full_name} + ' и ты спросил про: ' + text
+     # + {message.from_user.full_name}
+    results = 'Тебя зовут ' + ' и ты спросил про: ' + text
     print(' '.join(results[0]))
     return ' '.join(results[0])
 

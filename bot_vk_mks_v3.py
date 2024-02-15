@@ -13,7 +13,7 @@ from keep_alive import keep_alive
 keep_alive()
 
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
-GIGACHAT_TOKEN = os.environ.get('GIGACHAT_TOKEN')
+GIGACHAT_TOKEN = os.environ.get('sber_auth_code')
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 

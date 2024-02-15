@@ -44,9 +44,28 @@ async def cmd_start(message: types.Message):
     await message.answer(f'Привет, {message.from_user.full_name}!\n{hello_text}')
 
 
-@dp.message()
-async def correct_punctuation(message: types.Message):
-    await message.answer(gigachat_correction(message.text))
+# @dp.message()
+# async def correct_punctuation(message: types.Message):
+#     await message.answer(gigachat_correction(message.text))
+
+@bot.message_handler(func=lambda message: True)
+def handle_text(message):
+    order_number = message.text.strip()
+    print(order_number)
+    # giga_answer = order_number
+    giga_answer = gigachat_correction(message.text)
+    # Загружаем данные из Excel-таблицы
+    #orders_df = load_orders()
+
+    # Ищем статус заказа по номеру
+    #status = orders_df.loc[orders_df['Номер заказа'] == order_number, 'Статус'].values
+    status = '111'
+
+    if len(status) > 0:
+        # bot.reply_to(message, f"Статус заказа {order_number}: {status[0]}")
+        bot.reply_to(message, f"ответ: {giga_answer} " ) 
+    else:
+        bot.reply_to(message, f" Нененене {order_number} не найден.")
 
 
 if __name__ == '__main__':

@@ -9,6 +9,9 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
 from keep_alive import keep_alive
 
+from langchain.schema import HumanMessage, SystemMessage
+from langchain.chat_models.gigachat import GigaChat
+
 
 keep_alive()
 

@@ -7,3 +7,7 @@ Flask==3.0.0
 pandas==2.1.4
 threadpoolctl==3.2.0
 gigachat==0.1.13
+langchain==0.1.0
+langchain-community==0.0.12
+langchain-core==0.1.10
+langsmith==0.0.80

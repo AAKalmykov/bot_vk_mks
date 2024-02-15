@@ -50,8 +50,8 @@ async def cmd_start(message: types.Message):
 @dp.message()
 async def correct_punctuation(message: types.Message):
     # bot.reply_to(message, f"ответ: {giga_answer} " )
-    # await message.answer(gigachat_correction(message.text))
-    await message.reply_to(message, f"ответ: {gigachat_correction(message.text)} " )
+    await message.answer(gigachat_correction(message.text))
+    
 
 # @bot.message_handler(func=lambda message: True)
 # def handle_text(message):

@@ -42,7 +42,21 @@ def gigachat_correction(text):
 
 hello_text = 'Отправь мне текстовое сообщение и я расскажу про это.'
 
-@dp.message(Command('startt'))
+@dp.message(Command('start_reply'))
+async def cmd_start(message: types.Message):
+    await message.reply(message, f' reply , {message.from_user.full_name}!\n{hello_text}')
+
+@dp.message(Command('start_reply_to'))
+async def cmd_start(message: types.Message):
+    await message.reply_to(message, f' reply_to , {message.from_user.full_name}!\n{hello_text}')
+
+@dp.message(Command('start_reply_to_m'))
+async def cmd_start(message: types.Message):
+    await message.reply_to_message(message, f' reply_to_message  , {message.from_user.full_name}!\n{hello_text}')
+
+
+
+@dp.message(Command('stopp'))
 async def cmd_start(message: types.Message):
     await message.answer(f'Привет, {message.from_user.full_name}!\n{hello_text}')
 

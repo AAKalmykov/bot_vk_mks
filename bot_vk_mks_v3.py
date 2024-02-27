@@ -44,21 +44,25 @@ hello_text = 'Отправь мне текстовое сообщение и я 
 
 @dp.message(Command('start_reply'))
 async def cmd_start(message: types.Message):
-    await message.reply(message.message_id, f' reply , {message.from_user.full_name}!\n{hello_text}')
+    await message.reply(reply_to_message_id=message.message_id, f' reply , {message.from_user.full_name}!\n{hello_text}')
 
 @dp.message(Command('start_reply_to'))
 async def cmd_start(message: types.Message):
-    await message.reply_to(message.message_id, f' reply_to , {message.from_user.full_name}!\n{hello_text}')
+    await message.reply_to(reply_to_message_id=message.message_id, f' reply_to , {message.from_user.full_name}!\n{hello_text}')
 
 @dp.message(Command('start_reply_to_m'))
 async def cmd_start(message: types.Message):
-    await message.reply_to_message(message.message_id, f' reply_to_message  , {message.from_user.full_name}!\n{hello_text}')
+    await message.reply_to_message(reply_to_message_id=message.message_id, f' reply_to_message  , {message.from_user.full_name}!\n{hello_text}')
 
 
-
-@dp.message(Command('stopp'))
+@dp.message(Command('startt'))
 async def cmd_start(message: types.Message):
     await message.answer(f'Привет, {message.from_user.full_name}!\n{hello_text}')
+
+@dp.message(Command('stopp'))
+async def cmd_stop(message: types.Message):
+    await message.answer(f'stopppp  ')
+    await dp.start_polling(bot)
 
 
 @dp.message()
